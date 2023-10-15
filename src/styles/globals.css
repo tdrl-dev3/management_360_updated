@@ -1,27 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  .wrapper {
+    @apply w-full;
+  }
+
+  .hero-wrapper {
+    background-image: linear-gradient(45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ff9671,
+        #ffc75f,
+        #f9f871);
+    background-size: 300%;
+    animation: bg-animation 10s infinite alternate;
+    width: 100%;
+    height: 100vh;
+  }
+
+  @keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+
+    100% {
+      background-position: right;
+    }
+  }
+
+  .single-solution-bg {
+    width: 100%;
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-image: url("../public/images/single_solution.gif");
+  }
+
+  /* .footer-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  } */
+
+  /* .footer-list li:hover {
+    color: rgba(255, 255, 255, 0.4);
+  } */
+
+  .select-input {
+    @apply rounded py-2 px-3 flex-auto w-full border border-gray-300;
+  }
+
+  .select-input:focus-visible {
+    outline: none;
+    box-shadow: 1px 1px 5px 2px rgb(160 181 195);
+  }
+
+  /* .card_1 {
+    animation: slider_2 20s linear infinite;
+    animation-fill-mode: forwards;
+  }
+
+  .card_2 {
+    animation: slider_1 20s linear infinite;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slider_1 {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    40% {
+      visibility: hidden;
+      opacity: 1;
+    }
+
+    50% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    90% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes slider_2 {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    40% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    50% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    90% {
+      visibility: hidden;
+      opacity: 1;
+    }
+
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  } */
+
+  .first_law {
+    animation: first_law 10s 0.5s linear infinite;
+  }
+
+  .tds {
+    animation: tds 10s linear 0.5s infinite;
+  }
+
+  .second_law {
+    animation: second_law 10s linear 0.5s infinite;
+  }
+
+  .vds {
+    animation: vds 10s linear 0.5s infinite;
+  }
+
+  .net_amount::before {
+    content: "79,625";
+    animation: net_amount 10s linear 0.5s infinite;
+  }
+
+  @keyframes first_law {
+    0% {
+      opacity: 1;
+    }
+
+    16.66% {
+      opacity: 1;
+    }
+
+    33.32% {
+      opacity: 0;
+    }
+
+    49.98% {
+      opacity: 0;
+    }
+
+    66.64% {
+      opacity: 0;
+    }
+
+    83.3% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes tds {
+    0% {
+      opacity: 1;
+    }
+
+    16.66% {
+      opacity: 1;
+    }
+
+    33.32% {
+      opacity: 1;
+    }
+
+    49.98% {
+      opacity: 0;
+    }
+
+    66.64% {
+      opacity: 0;
+    }
+
+    83.3% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes second_law {
+    0% {
+      opacity: 1;
+    }
+
+    16.66% {
+      opacity: 1;
+    }
+
+    33.32% {
+      opacity: 1;
+    }
+
+    49.98% {
+      opacity: 1;
+    }
+
+    66.64% {
+      opacity: 0;
+    }
+
+    83.3% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes vds {
+    0% {
+      opacity: 1;
+    }
+
+    16.66% {
+      opacity: 1;
+    }
+
+    33.32% {
+      opacity: 1;
+    }
+
+    49.98% {
+      opacity: 1;
+    }
+
+    66.64% {
+      opacity: 1;
+    }
+
+    83.3% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes net_amount {
+    0% {
+      content: "79,625";
+    }
+
+    16.66% {
+      content: "79,625";
+    }
+
+    33.32% {
+      content: "79,625";
+    }
+
+    49.98% {
+      content: "79,625";
+    }
+
+    66.64% {
+      content: "79,625";
+    }
+
+    83.3% {
+      content: "100,000";
+    }
+
+    100% {
+      content: "100,000";
+    }
+  }
 }
